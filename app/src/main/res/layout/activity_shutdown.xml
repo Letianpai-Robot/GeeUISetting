@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black">
+
+
+        <TextView
+            android:id="@+id/shutdown"
+            android:layout_width="221dp"
+            android:layout_height="65px"
+            android:layout_marginTop="152px"
+            android:background="@drawable/shape_btn_white"
+            android:gravity="center"
+            android:text="Power off"
+            android:textColor="#0256FF"
+            android:textSize="24px"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/reboot"
+            android:layout_width="221dp"
+            android:layout_height="65px"
+            android:layout_marginTop="47px"
+            android:background="@drawable/shape_btn_white"
+            android:gravity="center"
+            android:text="Reboot"
+            android:textColor="@color/btn_bg"
+            android:textSize="24px"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/shutdown" />
+
+        <include
+            android:id="@+id/included"
+            layout="@layout/back_bottom"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/back_parent_height"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

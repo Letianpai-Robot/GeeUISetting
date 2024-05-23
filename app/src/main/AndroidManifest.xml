@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:sharedUserId="android.uid.system">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.MASTER_CLEAR" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.WRITE_SECURE_SETTINGS" />
+    <uses-permission
+        android:name="android.permission.REBOOT"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.ROOT" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.GeeUISetting"
+        tools:targetApi="31">
+        <activity
+            android:name=".MainActivity"
+            android:enabled="true"
+            android:exported="true">
+
+        </activity>
+        <activity
+            android:name=".ListActivity"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".DeviceInfoActivity"
+            android:enabled="true"
+            android:exported="true" />
+        <activity
+            android:name=".WifiActivity"
+            android:enabled="true"
+            android:exported="true" />
+        <activity
+            android:name=".SoundActivity"
+            android:enabled="true"
+            android:exported="true" />
+        <activity
+            android:name=".BlueActivity"
+            android:enabled="true"
+            android:exported="true" />
+        <activity
+            android:name=".ShutdownActivity"
+            android:enabled="true"
+            android:exported="true" />
+        <activity
+            android:name=".UpdateActivity"
+            android:enabled="true"
+            android:exported="true" />
+        <activity
+            android:name=".ResettingActivity"
+            android:enabled="true"
+            android:exported="true" />
+        <activity
+            android:name=".OtherActivity"
+            android:enabled="true"
+            android:exported="true" />
+        <activity
+            android:name=".LanguageActivity"
+            android:enabled="true"
+            android:exported="true" />
+        <activity
+            android:name=".WalkActivity"
+            android:enabled="true"
+            android:exported="true" />
+
+        <service
+            android:name=".SettingService"
+            android:enabled="true"
+            android:exported="true" />
+        <activity
+            android:name=".CommonBackActivity"
+            android:enabled="true"
+            android:exported="true" />
+    </application>
+
+</manifest>

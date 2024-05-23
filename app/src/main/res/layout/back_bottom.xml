@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/back"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/back_parent_height"
+        android:background="@color/btn_bg"
+        android:gravity="center_horizontal"
+        android:text="Back"
+        android:textColor="@color/white"
+        android:textSize="24px">
+
+        <ImageView
+            android:layout_width="@dimen/back_width"
+            android:layout_height="@dimen/back_height"
+            android:layout_centerInParent="true"
+            android:src="@drawable/icon_back" />
+    </RelativeLayout>
+</layout>

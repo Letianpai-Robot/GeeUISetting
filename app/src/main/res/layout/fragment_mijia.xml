@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="35px"
+            android:gravity="center"
+            android:text="第1步：请点击“点击绑定”按钮，\n显示二维码;\n第2步：打开米家APP，扫描二维码\n即可完成绑定。"
+            android:textColor="@color/white"
+            android:textSize="24px"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="sd" />
+
+        <Button
+            android:id="@+id/bind"
+            android:layout_width="210px"
+            android:layout_height="70px"
+            android:layout_marginBottom="30px"
+            android:background="@drawable/shape_btn_white"
+            android:textColor="@color/btn_bg"
+            android:textSize="24px"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="解除绑定" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:constraint_referenced_ids="title,bind" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/confirm_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/black"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10px"
+                android:text="在米家中解除绑定机器人？"
+                android:textColor="@color/text_yellow"
+                android:textSize="16px"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/cancel"
+                android:layout_width="150px"
+                android:layout_height="150px"
+                android:layout_marginStart="69px"
+                android:layout_marginBottom="100px"
+                android:src="@drawable/icon_cancel"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <ImageView
+                android:id="@+id/confirm_unbind"
+                android:layout_width="150px"
+                android:layout_height="150px"
+                android:layout_marginEnd="69px"
+                android:layout_marginBottom="115px"
+                android:src="@drawable/icon_confirm"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

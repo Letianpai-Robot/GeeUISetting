@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black">
+
+        <SeekBar
+            android:id="@+id/seekBar"
+            style="@style/update_progress_horizontal"
+            android:layout_width="300px"
+            android:layout_height="65px"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="245px"
+            android:max="15"
+            android:splitTrack="false"
+            android:thumb="@null"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:layout_width="144px"
+            android:layout_height="144px"
+            android:layout_marginTop="74px"
+            android:src="@drawable/icon_sound_big"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <include
+            android:id="@+id/included"
+            layout="@layout/back_bottom"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/back_parent_height"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

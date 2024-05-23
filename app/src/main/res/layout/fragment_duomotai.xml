@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black">
+
+        <TextView
+            android:id="@+id/wifi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="35px"
+            android:gravity="center"
+            android:text="@string/duomotai_title_tips"
+            android:textColor="@color/white"
+            android:textSize="24px"
+            app:layout_constraintBottom_toTopOf="@id/switchbtn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Switch
+            android:id="@+id/switchbtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="65px"
+            android:button="@null"
+            android:showText="true"
+            android:switchTextAppearance="@style/SwitchTheme"
+            android:textOff="Off"
+            android:textOn="On"
+            android:thumb="@drawable/switch_thumb"
+            android:track="@drawable/switch_track"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/wifi" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

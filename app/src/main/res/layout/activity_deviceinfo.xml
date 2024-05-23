@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="deviceInfo"
+            type="com.robot.geeui.setting.model.DeviceInfo" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black"
+        tools:context=".MainActivity">
+
+        <ScrollView
+            android:id="@+id/contentList"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="80px"
+            android:overScrollMode="never"
+            android:scrollbars="none"
+            app:layout_constraintBottom_toTopOf="@id/unbind"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/name"
+                    style="@style/DeviceInfoText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/sn"
+                    style="@style/DeviceInfoText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/country"
+                    style="@style/DeviceInfoText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text='@{@string/country(deviceInfo.country??"")}' />
+
+                <TextView
+                    android:id="@+id/version"
+                    style="@style/DeviceInfoText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text='@{@string/strversion(deviceInfo.version??"")}' />
+
+                <TextView
+                    android:id="@+id/mcu"
+                    style="@style/DeviceInfoText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/user"
+                    style="@style/DeviceInfoText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text='@{@string/struserid(deviceInfo.userId??"")}' />
+
+                <TextView
+                    android:id="@+id/email"
+                    style="@style/DeviceInfoText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text='@{@string/email(deviceInfo.email??"")}' />
+
+                <TextView
+                    android:id="@+id/mac"
+                    style="@style/DeviceInfoText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/ip"
+                    style="@style/DeviceInfoText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/blueMac"
+                    style="@style/DeviceInfoText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/point"
+                    style="@style/DeviceInfoText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text='@{@string/point(deviceInfo.point??"")}' />
+
+            </LinearLayout>
+        </ScrollView>
+
+        <ImageView
+            android:id="@+id/unbind"
+            android:layout_width="221px"
+            android:layout_height="65px"
+            android:layout_marginBottom="95px"
+            android:src="@drawable/unbind"
+            android:visibility="@{deviceInfo.userId!=0?View.VISIBLE:View.GONE}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <include
+            android:id="@+id/included"
+            layout="@layout/back_bottom"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/back_parent_height"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/confirm_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/black"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="100px"
+
+                android:text="确认解绑机器人吗？\nUnbind robot ?"
+                android:textColor="@color/white"
+                android:textSize="16px"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/cancel"
+                android:layout_width="150px"
+                android:layout_height="150px"
+                android:layout_marginStart="69px"
+                android:layout_marginBottom="115px"
+                android:src="@drawable/icon_cancel"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <ImageView
+                android:id="@+id/confirm_unbind"
+                android:layout_width="150px"
+                android:layout_height="150px"
+                android:layout_marginEnd="69px"
+                android:layout_marginBottom="115px"
+                android:src="@drawable/icon_confirm"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

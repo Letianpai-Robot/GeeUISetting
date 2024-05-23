@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="hasOta"
+            type="java.lang.Boolean" />
+
+        <variable
+            name="data"
+            type="com.robot.geeui.setting.model.OtaDataModel" />
+
+        <import type="android.view.View" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black">
+
+        <TextView
+            android:id="@+id/wifi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="85px"
+            android:gravity="center"
+            android:text='@{hasOta? @string/update_new_version:@string/update_no_new_version}'
+            android:textColor="@color/white"
+            android:textSize="24px"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25px"
+            android:text="@{data.romVersion}"
+            android:textColor="@color/white"
+            android:textSize="16px"
+            android:visibility="@{hasOta?View.VISIBLE:View.GONE}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/wifi" />
+
+        <FrameLayout
+            android:id="@+id/update"
+            android:layout_width="221px"
+            android:layout_height="65px"
+            android:layout_marginTop="265px"
+            android:background="@drawable/selector_btn"
+            android:gravity="center"
+            android:text="change"
+            android:textColor="@color/white"
+            android:textSize="24px"
+            android:visibility="@{hasOta?View.VISIBLE:View.GONE}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:layout_width="36px"
+                android:layout_height="30px"
+                android:layout_gravity="center"
+                android:src="@drawable/icon_update" />
+
+        </FrameLayout>
+
+        <include
+            android:id="@+id/included"
+            layout="@layout/back_bottom"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/back_parent_height"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

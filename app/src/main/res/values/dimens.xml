@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="start">75px</dimen>
+    <dimen name="end">75px</dimen>
+
+    <dimen name="back_parent_height">68px</dimen>
+    <dimen name="back_width">24px</dimen>
+    <dimen name="back_height">20px</dimen>
+
+</resources>
